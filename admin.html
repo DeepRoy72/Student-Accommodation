@@ -1,0 +1,109 @@
+<!DOCTYPE htmml>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>Admin Page</title>
+   <link rel="stylesheet" href="admin.css">
+   <script src="https://kit.fontawesome.com/012f08627d.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ </head>
+ <body onload="init()">
+   <script type="text/javascript">
+     console.log(localStorage);
+   </script>
+   <header class="header" id "header">
+     <div class="header-top">
+       <div class="site-name">
+       <span>Leisure Inn.</span>
+     </div>
+     <div class="site-nav">
+       <span id="nav-btn">MENU<i class = "fas fa-bars"></i></span>
+     </div>
+      </div>
+     <div class="head-bottom flex">
+       <h2>List of Rooms</h2>
+       </div>
+       <div class = "sidenav" id = "sidenav">
+         <span class = "cancel-btn" id = "cancel-btn">
+                   <i class = "fas fa-times"></i>
+               </span>
+               <ul class = "navbar">
+                   <li><a href = "#">Insert Room</a></li>
+               </ul>
+              <center> <a href = "project.html" class="btn btn-warning">log out</a> </center>
+           </div>
+           <div id = "modal"></div>
+
+<!--insert-->
+
+  <div class="form-box  hideform">
+    <center><h1 class="main-heading">Insert Data</h1></center>
+     <div class="input">
+    <form class="form form-body" action="admin.html" method="post">
+      <div class="form-group">
+      <input class="form-id form-ele" placeholder="Room ID"type="number"id="name" name="form-id" >
+  </div>
+    <label  class="form-label form-ele" for="type"></label>
+    <select class="combo" name="form-type" id="type1">
+      <option value= "" disabled selected hidden>Room Type</option>
+      <option value="single">Single</option>
+      <option value="double">Double</option>
+      <option value="4seater">Four Seater</option>
+    </select><br> <br>
+    <label class="form-label form-ele" for="location"></label>
+    <select class="combo1" name="form-location" id="location1">
+      <option value= "" disabled selected hidden>Location</option>
+      <option value="1stfloor">1st Floor</option>
+      <option value="2ndfloor">2nd Floor</option>
+      <option value="3rdfloor">3rd Floor</option>
+      <option value="4rthfloor">4rth Floor</option>
+    </select><br> <br>
+  <input class="form-charge form-ele" placeholder="Room Charge" type="number"id="charge" name="form-charge" >
+              <button class = "btn login" onclick="createRoom()">Insert</button>
+               </form>
+               </div>
+               <span class = "x-btn" id = "x-btn">
+                         <i class = "fas fa-times"></i>
+                     </span>
+               </div>
+
+               <!--insert-->
+
+       <center>
+       <div class="table" id="table">
+         <table class="table table-sm table-bordered table-hover table1" id="room-table">
+			<thead class="table2 ">
+				<tr>
+					<th class="table-dark">#ID</th>
+					<th class="table-dark">Type</th>
+					<th class="table-dark">Location</th>
+					<th class="table-dark">Charge</th>
+          <th class="table-dark">Room Status</th>
+          <th class="table-dark">Payment Status</th>
+          <th class="table-dark">Update</th>
+          <th class="table-dark">Delete</th>
+				</tr>
+			</thead>
+      <tbody id="tablerows">
+
+      </tbody>
+
+		</table>
+    </div>
+    </center>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script src="admin.js" charset="utf-8"></script>
+
+<script>
+document.querySelector(".x-btn").addEventListener("click",function(){
+  document.querySelector(".form-box").style.display="none";
+  document.querySelector(".form").style.display="none";
+})
+</script>
+
+ </body>
+ </html>
